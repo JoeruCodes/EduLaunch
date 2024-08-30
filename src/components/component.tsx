@@ -28,7 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import ThreeScene from "./mode";
+import ThreeScene from "./model";
 import Model from "./model";
 export function Component() {
   return (
@@ -48,7 +48,7 @@ export function Component() {
             className="text-sm font-medium hover:underline underline-offset-4"
             prefetch={false}
           >
-            Marketplace
+            Exchange
           </Link>
           <Link
             href="#"
@@ -71,13 +71,6 @@ export function Component() {
           >
             Transfer Token
           </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4"
-            prefetch={false}
-          >
-            Withdraw Token
-          </Link>
         </nav>
       </header>
       <main className="flex flex-col flex-1 w-full items-center">
@@ -87,11 +80,10 @@ export function Component() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Revolutionize Your Crypto Investments
+                    Revolutionize Your University Credits
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Discover the future of decentralized finance with our
-                    cutting-edge crypto ICO and token launchpad platform.
+                  Unlock decentralized credit transfers with our crypto ICO platform, streamlining credit exchange for university students.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -100,12 +92,12 @@ export function Component() {
                     className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}
                   >
-                    Explore Marketplace
+                    Explore Exchange
                   </Link>
                 </div>
               </div>
               {/* <img
-                src="/placeholder.svg"
+                src="/coins.webp"
                 width="550"
                 height="550"
                 alt="Hero"
@@ -120,56 +112,54 @@ export function Component() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Explore the Crypto Marketplace
+                  Explore the Credit Exchange
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Browse through our curated selection of crypto tokens and
-                  ICOs, and invest in the future of decentralized finance.
+                
+
+Browse our selection of university credit tokens and ICOs, and invest in the future of blockchain-based credit transfers.
+
                 </p>
               </div>
               <div className="w-full max-w-4xl">
                 <div className="rounded-lg border">
-                  <div className="grid grid-cols-[repeat(7,minmax(0,1fr))] items-center border-b p-4 font-medium">
+                  <div className="grid grid-cols-[repeat(6,minmax(0,1fr))] items-center border-b p-4 font-medium">
                     <div>Name</div>
                     <div>Symbol</div>
                     <div>Total Supply</div>
                     <div>Token</div>
-                    <div>Creator</div>
-                    <div>Price</div>
+                    <div>University</div>
                     <div></div>
                   </div>
                   <div className="divide-y">
-                    <div className="grid grid-cols-[repeat(7,minmax(0,1fr))] items-center p-4">
-                      <div>Bitcoin</div>
-                      <div>BTC</div>
-                      <div>21,000,000</div>
-                      <div>0.0001 BTC</div>
-                      <div>Satoshi Nakamoto</div>
-                      <div>$50,000</div>
+                    <div className="grid grid-cols-[repeat(6,minmax(0,1fr))] items-center p-4">
+                      <div>IIT Madras Credits</div>
+                      <div>IITM</div>
+                      <div>21,000</div>
+                      <div>0x1234...567</div>
+                      <div>Indian Institue of Technology Madras</div>
                       <div className="">
-                        <Button>Buy</Button>
+                        <Button>Exchange</Button>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[repeat(7,minmax(0,1fr))] items-center p-4">
-                      <div>Ethereum</div>
-                      <div>ETH</div>
-                      <div>120,000,000</div>
-                      <div>0.01 ETH</div>
-                      <div>Vitalik Buterin</div>
-                      <div>$2,000</div>
+                    <div className="grid grid-cols-[repeat(6,minmax(0,1fr))] items-center p-4">
+                      <div>IIT Bombay Credits</div>
+                      <div>IITB</div>
+                      <div>120,000</div>
+                      <div>0x1234...567</div>
+                      <div>Indian Institute of Technology Bombay</div>
                       <div>
-                        <Button>Buy</Button>
+                        <Button>Exchange</Button>
                       </div>
                     </div>
-                    <div className="grid grid-cols-[repeat(7,minmax(0,1fr))] items-center p-4">
-                      <div>Solana</div>
-                      <div>SOL</div>
-                      <div>500,000,000</div>
-                      <div>0.1 SOL</div>
-                      <div>Anatoly Yakovenko</div>
-                      <div>$100</div>
+                    <div className="grid grid-cols-[repeat(6,minmax(0,1fr))] items-center p-4">
+                      <div>IIT Delhi Credits</div>
+                      <div>IITD</div>
+                      <div>500,000</div>
+                      <div>0x1234...567</div>
+                      <div>Indian Institute of Technology Madras</div>
                       <div>
-                        <Button>Buy</Button>
+                        <Button>Exchange</Button>
                       </div>
                     </div>
                   </div>
@@ -199,85 +189,14 @@ export function Component() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                  Buy Crypto Tokens
+                Create Your Own ICO
                 </h2>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Securely purchase your desired crypto tokens and participate
-                  in the future of decentralized finance.
+                Launch your credit token as an ICO, enabling students to exchange their credits.
                 </p>
               </div>
               <div className="rounded-lg border p-6 w-full">
-                <h3 className="text-xl font-bold">Buy Token</h3>
-                <form className="space-y-4">
-                  <div>
-                    <Label htmlFor="token">Token</Label>
-
-                    <Select>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a token" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="bitcoin">Bitcoin (BTC)</SelectItem>
-                        <SelectItem value="ethereum">Ethereum (ETH)</SelectItem>
-                        <SelectItem value="solana">Solana (SOL)</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="amount">Amount</Label>
-                    <Input
-                      id="amount"
-                      type="number"
-                      placeholder="Enter amount"
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="payment">Payment Method</Label>
-                    <Select>
-                      <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select payment method" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="bitcoin">Bitcoin</SelectItem>
-                        <SelectItem value="ethereum">Ethereum</SelectItem>
-                        <SelectItem value="usdc">USDC</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span>Token Price</span>
-                      <span>$50,000</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span>Total Cost</span>
-                      <span>$50,000</span>
-                    </div>
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Buy Token
-                  </Button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-12 md:py-24 lg:py-32 flex justify-center">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Create Your Own ICO
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  List your crypto ICO on our platform and reach a wider
-                  audience of investors.
-                </p>
-              </div>
-              <div className="rounded-lg border p-6 w-full max-w-2xl">
-                <h3 className="text-xl font-bold">Create ICO</h3>
+              <h3 className="text-xl font-bold">Create ICO</h3>
                 <form className="space-y-4">
                   <div>
                     <Label htmlFor="token-name">Token Name</Label>
@@ -306,15 +225,6 @@ export function Component() {
                       className="w-full"
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="token-price">Token Price</Label>
-                    <Input
-                      id="token-price"
-                      type="number"
-                      placeholder="Enter token price"
-                      className="w-full"
-                    />
-                  </div>
                   <div className="space-y-2">
                     <h4 className="text-lg font-bold">ICO Details Preview</h4>
                     <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-2">
@@ -324,8 +234,6 @@ export function Component() {
                       <span>EXT</span>
                       <span>Total Supply:</span>
                       <span>1,000,000</span>
-                      <span>Token Price:</span>
-                      <span>$0.50</span>
                     </div>
                   </div>
                   <Button type="submit" className="w-full">
@@ -336,16 +244,16 @@ export function Component() {
             </div>
           </div>
         </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 flex justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Create Your Own Token
+                Mint Your Credit Token
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Mint your own unique crypto token and list it on our
-                  marketplace.
+                Create your own custom crypto credit token for your students and list it on our exchange.
                 </p>
               </div>
               <div className="rounded-lg border p-6 w-full max-w-2xl">
@@ -400,7 +308,57 @@ export function Component() {
                       <span>18</span>
                     </div>
                   </div>
-                  <Button type="submit" className="w-" />
+                  <Button type="submit" className="w-full">Create Credit</Button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted flex justify-center">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                Easy Credit Transfers
+                </h2>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Transfer credits with one click—only you, the university, can do it. Students can exchange them for credits at other universities.
+                </p>
+              </div>
+              <div className="rounded-lg border p-6 w-full">
+              <h3 className="text-xl font-bold">Create ICO</h3>
+                <form className="space-y-4">
+                <div>
+                    <Label htmlFor="student-address">Student Address</Label>
+                    <Input
+                      id="student-address"
+                      type="text"
+                      placeholder="Enter token address"
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="token-address">Token Address</Label>
+                    <Input
+                      id="token-address"
+                      type="text"
+                      placeholder="Enter token address"
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="amount">Amount</Label>
+                    <Input
+                      id="total-supply"
+                      type="number"
+                      placeholder="Enter amount"
+                      className="w-full"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full">
+                    Transfer Credits
+                  </Button>
                 </form>
               </div>
             </div>
@@ -413,19 +371,20 @@ export function Component() {
 
 function MountainIcon(props: any) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
+    // <svg
+    //   {...props}
+    //   xmlns="http://www.w3.org/2000/svg"
+    //   width="24"
+    //   height="24"
+    //   viewBox="0 0 24 24"
+    //   fill="none"
+    //   stroke="currentColor"
+    //   strokeWidth="2"
+    //   strokeLinecap="round"
+    //   strokeLinejoin="round"
+    //   s
+    // >
+    // </svg>
+    <img {...props} src="/logo1.svg" className="text-black" width={48} height={48}/>
   );
 }
