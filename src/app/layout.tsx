@@ -44,25 +44,32 @@ export default function Layout({ children }: any) {
               Exchange
             </Link>
             <Link
-              href="#"
+              href="/create-ico"
               className="text-sm font-medium hover:underline underline-offset-4"
               prefetch={false}
             >
               Create ICO
             </Link>
             <Link
-              href="#"
+              href="/create-token"
               className="text-sm font-medium hover:underline underline-offset-4"
               prefetch={false}
             >
               Create Token
             </Link>
             <Link
-              href="#"
+              href="/transfer"
               className="text-sm font-medium hover:underline underline-offset-4"
               prefetch={false}
             >
               Transfer Token
+            </Link>
+            <Link
+              href="/user"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}
+            >
+              My ICOs
             </Link>
           </nav>
         </header>

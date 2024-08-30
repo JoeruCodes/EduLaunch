@@ -49,7 +49,7 @@ export function Component() {
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link
-                  href="#"
+                  href="/exchange"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
@@ -126,14 +126,14 @@ export function Component() {
             </div>
             <div className="flex gap-4">
               <Link
-                href="#"
+                href="/create-ico"
                 className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 prefetch={false}
               >
                 Create ICO
               </Link>
               <Link
-                href="#"
+                href="/create-token"
                 className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                 prefetch={false}
               >
@@ -156,51 +156,24 @@ export function Component() {
               </p>
             </div>
             <div className="rounded-lg border p-6 w-full">
-              <h3 className="text-xl font-bold">Create ICO</h3>
-              <form className="space-y-4">
-                <div>
-                  <Label htmlFor="token-name">Token Name</Label>
-                  <Input
-                    id="token-name"
-                    type="text"
-                    placeholder="Enter token name"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="token-symbol">Token Symbol</Label>
-                  <Input
-                    id="token-symbol"
-                    type="text"
-                    placeholder="Enter token symbol"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="total-supply">Total Supply</Label>
-                  <Input
-                    id="total-supply"
-                    type="number"
-                    placeholder="Enter total supply"
-                    className="w-full"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-lg font-bold">ICO Details Preview</h4>
-                  <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-2">
-                    <span>Token Name:</span>
-                    <span>Example Token</span>
-                    <span>Token Symbol:</span>
-                    <span>EXT</span>
-                    <span>Total Supply:</span>
-                    <span>1,000,000</span>
-                  </div>
-                </div>
-                <Button type="submit" className="w-full">
-                  Create ICO
-                </Button>
-              </form>
-            </div>
+        <h3 className="text-xl font-bold">Create ICO</h3>
+        <form
+          className="space-y-4"
+        >
+          <div>
+            <Label htmlFor="address">Token Address</Label>
+            <Input
+              id="address"
+              type="text"
+              placeholder="Enter token address"
+              className="w-full"
+            />
+          </div>
+          <Button type="submit" className="w-full">
+            Create ICO
+          </Button>
+        </form>
+      </div>
           </div>
         </div>
       </section>
@@ -291,41 +264,41 @@ export function Component() {
                 universities.
               </p>
             </div>
-            <div className="rounded-lg border p-6 w-full">
-              <h3 className="text-xl font-bold">Create ICO</h3>
-              <form className="space-y-4">
-                <div>
-                  <Label htmlFor="student-address">Student Address</Label>
-                  <Input
-                    id="student-address"
-                    type="text"
-                    placeholder="Enter token address"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="token-address">Token Address</Label>
-                  <Input
-                    id="token-address"
-                    type="text"
-                    placeholder="Enter token address"
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="amount">Amount</Label>
-                  <Input
-                    id="total-supply"
-                    type="number"
-                    placeholder="Enter amount"
-                    className="w-full"
-                  />
-                </div>
-                <Button type="submit" className="w-full">
-                  Transfer Credits
-                </Button>
-              </form>
-            </div>
+                  <div className="rounded-lg border p-6 w-full">
+        <h3 className="text-xl font-bold">Transfer Tokens</h3>
+        <form className="space-y-4">
+          <div>
+            <Label htmlFor="student_address">Student Address</Label>
+            <Input
+              id="student_address"
+              type="text"
+              placeholder="Enter token address"
+              className="w-full"
+            />
+          </div>
+          <div>
+            <Label htmlFor="token_address">Token Address</Label>
+            <Input
+              id="token_address"
+              type="text"
+              placeholder="Enter token address"
+              className="w-full"
+            />
+          </div>
+          <div>
+            <Label htmlFor="amount">Amount</Label>
+            <Input
+              id="amount"
+              type="number"
+              placeholder="Enter amount"
+              className="w-full"
+            />
+          </div>
+          <Button type="submit" className="w-full">
+            Transfer Credits
+          </Button>
+        </form>
+      </div>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import Web3Modal from "web3modal";
 
 import ERC20Generator from "./ERC20Generator.json";
 import icoMarketplace from "./icoMarketplace.json";
+import toast from "react-hot-toast";
 
 export const ERC20Generator_ABI = ERC20Generator.abi;
 export const ERC20Generator_BYTECODE = ERC20Generator.bytecode;
@@ -132,7 +133,8 @@ const fetchContract = (
   abi: ethers.ContractInterface,
   signer: ethers.Signer
 ) => new ethers.Contract(address, abi, signer);
-
+export const notifySuccess = (msg: string) => toast.success(msg, { duration: 2000 });
+export const notifyError = (msg: string) => toast.error(msg, { duration: 2000 });
 export const ICO_MARKETPLACE_CONTARCT = async () => {
   try {
     if (ICO_MARKETPLACE_ADDRESS) {

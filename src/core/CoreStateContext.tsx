@@ -181,7 +181,8 @@ export const StateContextProvider = ({
           createdAt: _tokenCreatedData,
           logo: imageURL,
         };
-        setAddress(contract.address);
+        setTokenAddress(contract.address as string);
+        console.log(contract.address);
         let tokenHistory = [];
 
         const history = localStorage.getItem("TOKEN_HISTORY");
@@ -223,15 +224,17 @@ export const StateContextProvider = ({
         const connection = await web3modal.connect();
         const provider = new ethers.providers.Web3Provider(connection);
         const signer = provider.getSigner();
-        _deployContract(signer, account, name, symbol, supply, imageURL);
+        await _deployContract(signer, account, name, symbol, supply, imageURL);
+  
+        // Check if tokenAddress is updated here
+        console.log("Updated Token Address:", tokenAddress);
       }
     } catch (error) {
       setLoader(false);
-      notifyError("Someting went wrong, try later");
+      notifyError("Something went wrong, try later");
       console.log(error);
     }
   };
-
   //ALL PRESALE
   const GET_ALL_PRESALE_TOKENS = async () => {
     try {
@@ -522,6 +525,8 @@ export const StateContextProvider = ({
         setBuyIco,
         notifySuccess,
         notifyError,
+        setTokenAddress,
+        tokenAddress
       }}
     >
       {children}

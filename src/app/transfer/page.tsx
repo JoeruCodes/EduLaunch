@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { notifySuccess } from "@/core/constants";
 import { useStateContext } from "@/core/CoreStateContext";
 import React, { useEffect, useState } from "react";
 
@@ -14,9 +15,11 @@ const page = () => {
   });
 
   useEffect(() => {
-    if (!address) {
-      connectWallet();
-    }
+    const connect = async () => {
+      await connectWallet();
+    };
+  
+    connect();
   }, [address]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,13 +30,14 @@ const page = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevents the default form submission and page reload
-    transferTokens({
+    await transferTokens({
       address: formData.student_address,
       amount: formData.amount,
       tokenAdd: formData.token_address,
     });
+    notifySuccess("Credits transfered")
   };
   return (
     <div className="flex flex-col w-full px-[27rem] py-20">

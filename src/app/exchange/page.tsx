@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { shortenAddress } from "@/core/constants";
 import { useStateContext } from "@/core/CoreStateContext";
 import React, { useEffect, useState } from "react";
 
@@ -9,19 +10,18 @@ const Page = () => {
   const [list, setList] = useState<any[]>([]); // Ensure it's an array
 
   useEffect(() => {
-    if (!address) {
-      connectWallet();
-    }
-
-    // Fetch the tokens and ensure it's an array
-    const tokens = GET_ALL_PRESALE_TOKENS();
-    if (Array.isArray(tokens)) {
-      setList(tokens);
-    } else {
-      console.error("GET_ALL_USER_PRESALE_TOKENS did not return an array.");
-    }
+    const connect = async () => {
+      await connectWallet();
+      const tokens = await GET_ALL_PRESALE_TOKENS();
+      if (Array.isArray(tokens)) {
+        setList(tokens);
+      } else {
+        console.error("GET_ALL_USER_PRESALE_TOKENS did not return an array.");
+      }
+    };
+    connect();
   }, [address]);
-
+  
   return (
     <div className="flex flex-col w-full p-20 space-y-10">
       <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none ">
@@ -43,10 +43,10 @@ const Page = () => {
             >
               <div>{l.name}</div>
               <div>{l.symbol}</div>
-              <div>{l.token}</div>
-              <div>{l.creator}</div>
+              <div>{shortenAddress(l.token)}</div>
+              <div>{shortenAddress(l.creator)}</div>
               <div className="">
-                <Button onClick={() => buyToken(l.token, 1)}>Exchange</Button>
+                <Button onClick={async () => await buyToken(l.token, 1)}>Exchange</Button>
               </div>
             </div>
           ))}

@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { notifySuccess } from "@/core/constants";
 import { useStateContext } from "@/core/CoreStateContext";
 import React, { useEffect, useState } from "react";
 
@@ -15,10 +16,13 @@ const Page = () => {
   });
 
   useEffect(() => {
-    if (!address) {
-      connectWallet();
-    }
+    const connect = async () => {
+      await connectWallet();
+    };
+  
+    connect();
   }, [address]);
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -28,14 +32,15 @@ const Page = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Prevents the default form submission and page reload
-    createERC20({
+    await createERC20({
       account: address,
       name: formData.name,
       supply: formData.supply,
       symbol: formData.symbol,
     });
+    notifySuccess("Token deployed!")
   };
 
   return (
@@ -88,10 +93,10 @@ const Page = () => {
             Create Token
           </Button>
         </form>
-        <h1 className="text-2xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none ">
-          {tokenAddress}
-        </h1>
       </div>
+      {tokenAddress !== "" && <h1 className="mt-8 text-md font-bold tracking-tighter sm:text-lg xl:text-xl/none ">
+          Token Address: {tokenAddress}
+      </h1>}
     </div>
   );
 };
