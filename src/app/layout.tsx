@@ -3,6 +3,10 @@
 import { Manrope } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import Link from "next/link";
+import { MountainIcon } from "@/components/component";
+import { StateContextProvider } from "@/core/CoreStateContext";
+import { Toaster } from "react-hot-toast";
 
 const fontHeading = Manrope({
   subsets: ["latin"],
@@ -22,7 +26,52 @@ export default function Layout({ children }: any) {
       <body
         className={cn("antialiased", fontHeading.variable, fontBody.variable)}
       >
-        {children}
+        <header className="px-4 lg:px-6 h-14 flex items-center">
+          <Link
+            href="/"
+            className="flex items-center justify-center"
+            prefetch={false}
+          >
+            <MountainIcon className="h-6 w-6" />
+            <span className="sr-only">Crypto Launchpad</span>
+          </Link>
+          <nav className="ml-auto flex gap-4 sm:gap-6">
+            <Link
+              href="/exchange"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}
+            >
+              Exchange
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}
+            >
+              Create ICO
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}
+            >
+              Create Token
+            </Link>
+            <Link
+              href="#"
+              className="text-sm font-medium hover:underline underline-offset-4"
+              prefetch={false}
+            >
+              Transfer Token
+            </Link>
+          </nav>
+        </header>
+        <div>
+          <StateContextProvider>
+            <Toaster />
+            {children}
+          </StateContextProvider>
+        </div>
       </body>
     </html>
   );
