@@ -43,7 +43,7 @@ export const StateContextProvider = ({
   const [loader, setLoader] = useState(false);
   const [reCall, setReCall] = useState(0);
   const [currency, setCurrency] = useState("MATIC");
-
+  const [tokenAddress, setTokenAddress] = useState("");
   //COMPONENT
   const [openBuyToken, setOpenBuyToken] = useState(false);
   const [openWidthdrawToken, setopenWidthdrawToken] = useState(false);
@@ -181,7 +181,7 @@ export const StateContextProvider = ({
           createdAt: _tokenCreatedData,
           logo: imageURL,
         };
-
+        setAddress(contract.address);
         let tokenHistory = [];
 
         const history = localStorage.getItem("TOKEN_HISTORY");

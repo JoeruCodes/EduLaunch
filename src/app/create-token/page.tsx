@@ -6,7 +6,8 @@ import { useStateContext } from "@/core/CoreStateContext";
 import React, { useEffect, useState } from "react";
 
 const Page = () => {
-  const { address, connectWallet, createERC20 } = useStateContext();
+  const { address, connectWallet, createERC20, tokenAddress } =
+    useStateContext();
   const [formData, setFormData] = useState({
     name: "",
     symbol: "",
@@ -87,6 +88,9 @@ const Page = () => {
             Create Token
           </Button>
         </form>
+        <h1 className="text-2xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none ">
+          {tokenAddress}
+        </h1>
       </div>
     </div>
   );
