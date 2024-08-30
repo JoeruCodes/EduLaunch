@@ -30,6 +30,7 @@ import {
 import { Input } from "@/components/ui/input";
 import ThreeScene from "./model";
 import Model from "./model";
+import Image from "next/image";
 export function Component() {
   return (
     <main className="flex flex-col flex-1 w-full items-center">
@@ -57,7 +58,7 @@ export function Component() {
                 </Link>
               </div>
             </div>
-            <img
+            <Image
               src="/coins.webp"
               width="550"
               height="550"
@@ -322,7 +323,7 @@ export function MountainIcon(props: any) {
     //   s
     // >
     // </svg>
-    <img
+    <Image
       {...props}
       src="/logo1.svg"
       className="text-black"
