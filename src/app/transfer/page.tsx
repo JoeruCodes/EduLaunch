@@ -6,7 +6,7 @@ import { notifySuccess } from "@/core/constants";
 import { useStateContext } from "@/core/CoreStateContext";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
   const { address, connectWallet, transferTokens } = useStateContext();
   const [formData, setFormData] = useState({
     student_address: "",
@@ -83,4 +83,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

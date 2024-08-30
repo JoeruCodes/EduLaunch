@@ -5,7 +5,6 @@ import { Label } from "@/components/ui/label";
 import { notifySuccess } from "@/core/constants";
 import { useStateContext } from "@/core/CoreStateContext";
 import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 
 const Page = () => {
   const { address, connectWallet, createICOSale } = useStateContext();
